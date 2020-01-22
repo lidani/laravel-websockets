@@ -24,3 +24,7 @@ Route::post('/user/{id}', 'AuthController@change');
 Route::get('/users', function (Request $request) {
     return response()->json(User::all(['id', 'name', 'email']));
 });
+
+Route::post('/testpusher', function () {
+    return event(new MyEvent('Hello, World!'));
+});

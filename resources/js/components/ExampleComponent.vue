@@ -6,9 +6,10 @@
           <div class="card-header">Example Component</div>
 
           <div class="card-body">
-            <button class="btn btn-outline-primary" @click="createUser">Criar usuário aleatoriamente</button>
+            <!-- <button class="btn btn-outline-primary" @click="createUser">Criar usuário aleatoriamente</button> -->
+            <button class="btn btn-outline-primary" @click="pusher">Teste pusher</button>
 
-            <table class="table table-bordered my-2">
+            <!-- <table class="table table-bordered my-2">
               <thead>
                 <tr>
                   <td>
@@ -25,7 +26,7 @@
                   <td>{{user.email}}</td>
                 </tr>
               </tbody>
-            </table>
+            </table> -->
           </div>
         </div>
       </div>
@@ -74,6 +75,9 @@ export default {
   methods: {
     detail(user) {
       this.$router.push({ name: "detail", params: { user } });
+    },
+    pusher(){
+        axios.post("/api/testpusher").then(r => console.log(r)).catch(e => console.error(e));
     },
     createUser() {
       axios
