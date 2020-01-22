@@ -62528,7 +62528,7 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   cluster: 'mt1',
   forceTLS: true
 });
-var channel = laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"].channel('my-channel');
+var channel = window.Echo.channel('my-channel');
 channel.listen('.my-event', function (data) {
   alert(JSON.stringify(data));
 });

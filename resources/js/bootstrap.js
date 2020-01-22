@@ -66,7 +66,7 @@ window.Echo = new Echo({
     forceTLS: true
 });
 
-var channel = Echo.channel('my-channel');
+var channel = window.Echo.channel('my-channel');
 channel.listen('.my-event', function (data) {
     alert(JSON.stringify(data));
 });
