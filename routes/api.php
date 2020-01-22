@@ -23,7 +23,7 @@ Route::post('/user/create', 'AuthController@register');
 Route::post('/user/{id}', 'AuthController@change');
 
 Route::get('/users', function (Request $request) {
-    return response()->json(User::all(['id', 'nome', 'email']));
+    return response()->json(User::all(['id', 'nome']));
 });
 
 Route::post('/testpusher', function () {
