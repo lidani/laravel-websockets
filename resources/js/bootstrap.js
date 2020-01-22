@@ -67,6 +67,6 @@ window.Echo = new Echo({
 });
 
 var channel = window.Echo.channel('my-channel');
-channel.listen('.my-event', function (data) {
+channel.listen('MyEvent', function (data) {
     alert(JSON.stringify(data));
 });

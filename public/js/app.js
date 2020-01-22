@@ -62529,7 +62529,7 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   forceTLS: true
 });
 var channel = window.Echo.channel('my-channel');
-channel.listen('.my-event', function (data) {
+channel.listen('MyEvent', function (data) {
   alert(JSON.stringify(data));
 });
 
