@@ -62554,6 +62554,7 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   cluster: "mt1",
   wsHost: '127.0.0.1',
   wsPort: 6001,
+  transports: ['websocket'],
   disableStats: true
 }); // import Echo from 'laravel-echo'
 // window.Pusher = require('pusher-js');
