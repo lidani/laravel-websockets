@@ -26,7 +26,7 @@
                   <td>{{user.email}}</td>
                 </tr>
               </tbody>
-            </table> -->
+            </table>-->
           </div>
         </div>
       </div>
@@ -38,25 +38,25 @@
 export default {
   created() {
     console.log("created");
-    window.Echo.channel('Testezinho').listen('EventTestezinho', e => console.log(e));
-    window.Echo.channel("eventoTest").listen("EventoTest", e => {
-      console.log("evento teste listen from Example component.vue", e);
-      let i;
-      const user = this.users.find((user, index) => {
-        if (user.id === e.user.id) {
-          i = index;
-          return true;
-        }
-        return false;
-      });
-      if (!user) {
-        this.users = this.users.slice().reverse();
-        this.users.push(e.user);
-        this.users = this.users.slice().reverse();
-      } else {
-        this.users.splice(i, 1, e.user);
-      }
-    });
+    // window.Echo.channel('Testezinho').listen('EventTestezinho', e => console.log(e));
+    // window.Echo.channel("eventoTest").listen("EventoTest", e => {
+    //   console.log("evento teste listen from Example component.vue", e);
+    //   let i;
+    //   const user = this.users.find((user, index) => {
+    //     if (user.id === e.user.id) {
+    //       i = index;
+    //       return true;
+    //     }
+    //     return false;
+    //   });
+    //   if (!user) {
+    //     this.users = this.users.slice().reverse();
+    //     this.users.push(e.user);
+    //     this.users = this.users.slice().reverse();
+    //   } else {
+    //     this.users.splice(i, 1, e.user);
+    //   }
+    // });
   },
   mounted() {
     console.log("Component mounted.");
@@ -76,8 +76,11 @@ export default {
     detail(user) {
       this.$router.push({ name: "detail", params: { user } });
     },
-    pusher(){
-        axios.post("/api/testpusher").then(r => console.log(r)).catch(e => console.error(e));
+    pusher() {
+      axios
+        .post("/api/testpusher")
+        .then(r => console.log(r))
+        .catch(e => console.error(e));
     },
     createUser() {
       axios

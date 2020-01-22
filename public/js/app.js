@@ -1735,42 +1735,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   created: function created() {
-    var _this = this;
-
-    console.log("created");
-    window.Echo.channel('Testezinho').listen('EventTestezinho', function (e) {
-      return console.log(e);
-    });
-    window.Echo.channel("eventoTest").listen("EventoTest", function (e) {
-      console.log("evento teste listen from Example component.vue", e);
-      var i;
-
-      var user = _this.users.find(function (user, index) {
-        if (user.id === e.user.id) {
-          i = index;
-          return true;
-        }
-
-        return false;
-      });
-
-      if (!user) {
-        _this.users = _this.users.slice().reverse();
-
-        _this.users.push(e.user);
-
-        _this.users = _this.users.slice().reverse();
-      } else {
-        _this.users.splice(i, 1, e.user);
-      }
-    });
+    console.log("created"); // window.Echo.channel('Testezinho').listen('EventTestezinho', e => console.log(e));
+    // window.Echo.channel("eventoTest").listen("EventoTest", e => {
+    //   console.log("evento teste listen from Example component.vue", e);
+    //   let i;
+    //   const user = this.users.find((user, index) => {
+    //     if (user.id === e.user.id) {
+    //       i = index;
+    //       return true;
+    //     }
+    //     return false;
+    //   });
+    //   if (!user) {
+    //     this.users = this.users.slice().reverse();
+    //     this.users.push(e.user);
+    //     this.users = this.users.slice().reverse();
+    //   } else {
+    //     this.users.splice(i, 1, e.user);
+    //   }
+    // });
   },
   mounted: function mounted() {
-    var _this2 = this;
+    var _this = this;
 
     console.log("Component mounted.");
     axios.get("/api/users").then(function (response) {
-      _this2.users = response.data.slice().reverse();
+      _this.users = response.data.slice().reverse();
     })["catch"](function (e) {
       return console.error(e.response || e);
     });
