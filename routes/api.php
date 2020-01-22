@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\MyEvent;
 use App\User;
 use Illuminate\Http\Request;
 
